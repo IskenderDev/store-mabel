@@ -23,6 +23,8 @@ const Basket = () => {
     setCartItems([...cartItems, newItem]);
   };
 
+  
+
   const handleUpdateQuantity = (id, quantity) => {
     setCartItems(
       cartItems.map((item) =>
