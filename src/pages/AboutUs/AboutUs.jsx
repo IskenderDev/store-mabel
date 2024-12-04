@@ -1,18 +1,18 @@
 import React from 'react';
 import mebel from '../../assets/Mebel.jpg';
+import Header from '../../componets/Header';
 
 const AboutUs = () => {
   return (
+    <>
+    <Header />
     <div className="container mx-auto px-6 py-12 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full -z-10"></div>
-
-      {/* Header */}
       <div className="text-5xl font-bold text-center text-gray-900 mb-12">
         Добро пожаловать в <span className="text-blue-600">мир мебели</span>
       </div>
 
       <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-        {/* Text Section */}
         <div
           className="text-lg font-medium text-gray-700 mb-6 md:mb-0 max-w-xl mx-auto md:mx-0"
           data-aos="fade-right"
@@ -30,7 +30,6 @@ const AboutUs = () => {
           </p>
         </div>
 
-        {/* Image Section */}
         <div
           className="relative w-full max-w-lg transform transition-transform duration-700 hover:scale-105 hover:rotate-2 shadow-xl rounded-lg overflow-hidden"
           data-aos="zoom-in"
@@ -42,8 +41,6 @@ const AboutUs = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-800 opacity-30"></div>
         </div>
-
-        {/* Values Section */}
         <div className="text-center md:text-left mt-8 md:mt-0">
           <h2 className="text-3xl font-semibold text-gray-800 mb-6">
             Почему выбирают нас?
@@ -67,8 +64,6 @@ const AboutUs = () => {
           </button>
         </div>
       </div>
-
-      {/* Additional Call to Action */}
       <div
         className="mt-12 text-center"
         data-aos="fade-up"
@@ -85,6 +80,7 @@ const AboutUs = () => {
         </button>
       </div>
     </div>
+    </>
   );
 };
 

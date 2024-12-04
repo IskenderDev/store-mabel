@@ -3,7 +3,7 @@ import prod from '../assets/bed.png'
 
 const Product = () => {
   return (
-    <div className="flex  pt-5">
+    <div className="flex justify-center pt-5">
       <div className=" rounded-lg shadow-lg w-60 overflow-hidden relative">
         <div className="relative">
           <img src={prod} alt="Лофт" className="w-full h-48 object-cover rounded-t-lg" />
