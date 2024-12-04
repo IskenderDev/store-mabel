@@ -9,7 +9,6 @@ import BedPage from './pages/Catalog/BedPage/BedPage';
 
 const App = () => {
   return (
-    <div className="container mx-auto p-4">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/catalog" element={<Catalog />} />
@@ -18,7 +17,6 @@ const App = () => {
         <Route path="/basket" element={<Basket />} />
         <Route path="/about-us" element={<AboutUs />} />
       </Routes>
-    </div>
   );
 };
 

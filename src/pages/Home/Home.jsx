@@ -1,8 +1,19 @@
 import React from 'react'
+import Header from '../../componets/Header'
+import Banner from '../../componets/Banner'
+import CategoryList from '../../componets/CategoryList'
+import PopularProducts from '../../componets/PopularProducts '
+import AboutCompany from '../../componets/AboutCompany'
 
 const Home = () => {
   return (
-    <div className='text-red-600 text-xl'>Home</div>
+    <div>
+      <Header/>
+      <Banner/>
+      <CategoryList/>
+      <PopularProducts />
+      <AboutCompany/>
+    </div>
   )
 }
 
