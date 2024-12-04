@@ -1,15 +1,26 @@
+import { NavLink } from "react-router-dom";
+
 export default function CategoryList() {
-    const categories = [
-      { name: 'Столы', image: 'src/assets/catTable.jpeg' },
-      { name: 'Кровати', image: 'src/assets/catBed.jpeg' },
-      { name: 'Шкафы', image: 'src/assets/catShelf.jpeg' },
-    ];
-  
-    return (
-      <div className="py-8">
-        <h2 className="text-xl font-bold text-center mb-6">Категории мебели</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {categories.map((category, index) => (
+  const categories = [
+    {
+      name: "Столы",
+      image: "src/assets/catTable.jpeg",
+      link: "/catalog/table",
+    },
+    { name: "Кровати", image: "src/assets/catBed.jpeg", link: "/catalog/bed" },
+    {
+      name: "Шкафы",
+      image: "src/assets/catShelf.jpeg",
+      link: "/catalog/wardrobe",
+    },
+  ];
+
+  return (
+    <div className="py-8">
+      <h2 className="text-xl font-bold text-center mb-6">Категории мебели</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {categories.map((category, index) => (
+          <NavLink to={category.link}>
             <div
               key={index}
               className="relative group border rounded-lg overflow-hidden"
@@ -25,9 +36,9 @@ export default function CategoryList() {
                 </span>
               </div>
             </div>
-          ))}
-        </div>
+          </NavLink>
+        ))}
       </div>
-    );
-  }
-  
+    </div>
+  );
+}

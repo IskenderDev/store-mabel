@@ -38,7 +38,6 @@ const Basket = () => {
 
   return (
     <>
-      <Header />
       <div className="p-6">
         <div className="text-4xl font-bold mb-6">Корзина</div>
         <div className="flex flex-col lg:flex-row gap-6">

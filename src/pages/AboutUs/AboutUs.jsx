@@ -5,7 +5,6 @@ import Header from '../../componets/Header';
 const AboutUs = () => {
   return (
     <>
-    <Header />
     <div className="container mx-auto px-6 py-12 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full -z-10"></div>
       <div className="text-5xl font-bold text-center text-gray-900 mb-12">
