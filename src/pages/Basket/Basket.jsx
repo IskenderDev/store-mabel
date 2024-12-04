@@ -5,8 +5,8 @@ import Header from '../../componets/Header';
 
 const Basket = () => {
   const [cartItems, setCartItems] = useState([
-    { id: 1, name: 'Стильное кресло "Moderno"', price: 7999, quantity: 1 },
-    { id: 2, name: 'Элегантный стол', price: 4999, quantity: 1 },
+    { id: 1, name: 'Стильное кресло "Moderno"', price: 79999, quantity: 1 },
+    { id: 2, name: 'Элегантный стол', price: 2999, quantity: 1 },
   ]);
 
   const handleDelete = (id) => {
@@ -22,8 +22,6 @@ const Basket = () => {
     };
     setCartItems([...cartItems, newItem]);
   };
-
-  
 
   const handleUpdateQuantity = (id, quantity) => {
     setCartItems(
