@@ -7,19 +7,23 @@ import Basket from "./pages/Basket/Basket";
 import ClosetPage from "./pages/Catalog/ClosetPage/ClosetPage";
 import BedPage from "./pages/Catalog/BedPage/BedPage";
 import Footer from "./componets/Footer";
+import { useState } from "react";
 
 const App = () => {
+
+  const [cartItems, setCartItems] = useState([]);
+
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/catalog" element={<Catalog cartItems={cartItems} setCartItems={setCartItems} />} />
         <Route path="/catalog/bed" element={<BedPage />} />
         <Route path="/catalog/closet" element={<ClosetPage />} />
-        <Route path="/basket" element={<Basket />} />
+        <Route path="/basket" element={<Basket cartItems={cartItems} setCartItems={setCartItems} />} />
         <Route path="/about-us" element={<AboutUs />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </>
   );
 };

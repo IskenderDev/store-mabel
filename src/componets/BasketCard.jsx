@@ -17,7 +17,7 @@ const BasketCard = ({ item, onDelete, onUpdateQuantity }) => {
       <div className="flex items-start gap-4">
         <input type="checkbox" className="w-5 h-5 mt-1" />
         <img
-          src={furnitureImage}
+          src={item.image}
           alt={item.name}
           className="w-24 h-24 object-cover rounded-lg"
         />
