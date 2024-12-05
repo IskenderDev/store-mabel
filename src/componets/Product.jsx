@@ -1,31 +1,24 @@
-import React from "react";
-
 const Product = ({ product, addToCart }) => {
   const { name, description, price, image } = product;
 
   return (
     <div className="flex justify-center pt-5">
       <div className="rounded-lg shadow-lg w-60 overflow-hidden relative">
-        <div className="relative">
-          <img
-            src={image}
-            alt={name}
-            className="w-full h-48 object-cover rounded-t-lg"
-          />
-          <div className="bg-gradient-to-t w-full">
-            <p className="text-black text-lg font-semibold">{name}</p>
-          </div>
-        </div>
+        <img
+          src={image}
+          alt={name}
+          className="w-full h-48 object-cover rounded-t-lg"
+          onClick={() => addToCart(product)} // Добавляем возможность добавить в корзину кликом по изображению
+        />
         <div className="p-4">
+          <h3 className="text-lg font-semibold">{name}</h3>
           <p className="text-gray-700 text-sm">{description}</p>
         </div>
         <div className="flex justify-between items-center p-4 border-t border-gray-200">
-          <p className="text-lg font-semibold text-gray-800">
-            {price.toLocaleString()} ₽
-          </p>
+          <p className="text-lg font-semibold">{price.toLocaleString()} ₽</p>
           <button
             className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-dark focus:outline-none"
-            onClick={() => addToCart && addToCart(product)}
+            onClick={() => addToCart(product)}
           >
             В корзину
           </button>

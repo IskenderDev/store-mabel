@@ -1,40 +1,12 @@
-import React, { useState } from 'react';
 import BasketCard from '../../componets/BasketCard';
 import OrderBasket from '../../componets/OrderBasket';
 import Header from '../../componets/Header';
 
-const Basket = () => {
-  const [cartItems, setCartItems] = useState([
-    { id: 1, name: 'Стильное кресло "Moderno"', price: 79999, quantity: 1 },
-    { id: 2, name: 'Элегантный стол', price: 2999, quantity: 1 },
-  ]);
-
-  const handleDelete = (id) => {
-    setCartItems(cartItems.filter((item) => item.id !== id));
-  };
-
-  const handleAddItem = () => {
-    const newItem = {
-      id: Date.now(),
-      name: 'Новый товар',
-      price: 2999,
-      quantity: 1,
-    };
-    setCartItems([...cartItems, newItem]);
-  };
-
-  const handleUpdateQuantity = (id, quantity) => {
-    setCartItems(
-      cartItems.map((item) =>
-        item.id === id ? { ...item, quantity: Math.max(quantity, 1) } : item
-      )
-    );
-  };
-
-  const total = cartItems.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
+const Basket = ({ cartItems, removeFromCart, updateQuantity }) => {
+     const total = cartItems.reduce(
+       (sum, item) => sum + item.price * item.quantity,
+       0
+     );
 
   return (
     <>
@@ -46,22 +18,14 @@ const Basket = () => {
               <BasketCard
                 key={item.id}
                 item={item}
-                onDelete={() => handleDelete(item.id)}
-                onUpdateQuantity={handleUpdateQuantity}
+                onDelete={() => removeFromCart(item.id)}
+                onUpdateQuantity={updateQuantity}
               />
             ))}
           </div>
           <div className="w-full lg:w-1/3">
             <OrderBasket total={total} />
           </div>
-        </div>
-        <div className="mt-6">
-          <button
-            onClick={handleAddItem}
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
-          >
-            Добавить товар
-          </button>
         </div>
       </div>
     </>

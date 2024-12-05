@@ -2,7 +2,7 @@ import React from "react";
 import products from "../../../data/products";
 import Product from "../../../componets/Product";
 
-const TablePage = () => {
+const TablePage = ({addToCart}) => {
   const tables = products.filter((product) => product.category === "Столы");
 
   return (
@@ -13,7 +13,7 @@ const TablePage = () => {
       <div className="grid gap-5 grid-cols-[repeat(auto-fill,minmax(260px,1fr))] w-[1380px] mx-auto px-4">
         {tables.map((table) => (
           <Product
-           key={table.id} product={table} />
+           key={table.id} product={table} addToCart={addToCart}/>
         ))}
       </div>
     </div>

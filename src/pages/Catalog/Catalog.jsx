@@ -1,11 +1,9 @@
-import React, { useState } from "react";
-import products from "../../data/products"; // Предполагаем, что данные продуктов хранятся в этом файле.
+import React from "react";
+import products from "../../data/products";
 import Product from "../../componets/Product";
 import Header from "../../componets/Header";
 
-const Catalog = () => {
-  const [cartItems, setCartItems] = useState([]);
-
+const Catalog = ({ cartItems, setCartItems }) => {
   const addToCart = (product) => {
     const existingProduct = cartItems.find((item) => item.id === product.id);
     if (existingProduct) {
