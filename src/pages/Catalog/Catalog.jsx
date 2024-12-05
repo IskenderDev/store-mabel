@@ -21,7 +21,6 @@ const Catalog = ({ cartItems, setCartItems }) => {
 
   return (
     <>
-      <Header />
       <div className="flex flex-col justify-center items-center">
         <h1 className="text-4xl mt-5 text-left">Каталог</h1>
         <div className="grid gap-5 grid-cols-[repeat(auto-fill,minmax(260px,1fr))] w-[1380px]">

@@ -12,7 +12,7 @@ const AboutCompany = () => {
         </p>
         <div className="relative mb-8">
           <img
-            src="src/assets/main.jpg" // Замените на путь к вашему изображению
+            src="src/assets/main.jpg" 
             alt="Furniture"
             className="rounded-lg shadow-lg w-full object-cover h-96"
           />

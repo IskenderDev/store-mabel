@@ -2,27 +2,14 @@ import BasketCard from '../../componets/BasketCard';
 import OrderBasket from '../../componets/OrderBasket';
 import Header from '../../componets/Header';
 
-const Basket = ({ cartItems, setCartItems }) => {
-  const handleDelete = (id) => {
-    setCartItems(cartItems.filter((item) => item.id !== id));
-  };
-
-  const handleUpdateQuantity = (id, quantity) => {
-    setCartItems(
-      cartItems.map((item) =>
-        item.id === id ? { ...item, quantity: Math.max(quantity, 1) } : item
-      )
-    );
-  };
-
-  const total = cartItems.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
+const Basket = ({ cartItems, removeFromCart, updateQuantity }) => {
+     const total = cartItems.reduce(
+       (sum, item) => sum + item.price * item.quantity,
+       0
+     );
 
   return (
     <>
-      <Header />
       <div className="p-6">
         <div className="text-4xl font-bold mb-6">Корзина</div>
         <div className="flex flex-col lg:flex-row gap-6">
@@ -31,8 +18,8 @@ const Basket = ({ cartItems, setCartItems }) => {
               <BasketCard
                 key={item.id}
                 item={item}
-                onDelete={() => handleDelete(item.id)}
-                onUpdateQuantity={handleUpdateQuantity}
+                onDelete={() => removeFromCart(item.id)}
+                onUpdateQuantity={updateQuantity}
               />
             ))}
           </div>

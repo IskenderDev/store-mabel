@@ -11,7 +11,7 @@ const PopularProducts = () => {
       <h2 className="text-2xl font-semibold text-center mb-8 text-gray-800">
         Популярные товары
       </h2>
-      <div className="grid grid-cols-3 px-40 gap-10">
+      <div className="grid grid-cols-3 px-80 gap-16">
         {popularProducts.map((product) => (
           <Product key={product.id} product={product} />
         ))}

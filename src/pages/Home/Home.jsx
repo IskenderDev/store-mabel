@@ -8,7 +8,6 @@ import AboutCompany from '../../componets/AboutCompany'
 const Home = () => {
   return (
     <div>
-      <Header/>
       <Banner/>
       <CategoryList/>
       <PopularProducts />
